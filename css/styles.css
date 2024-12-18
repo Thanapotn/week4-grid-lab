@@ -1,5 +1,5 @@
 /* styles.css */
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-areas:
         "header header header"
@@ -12,50 +12,55 @@
     padding: 1rem;
 }
 
-.header{
-    grid-area:  header;
+.header {
+    grid-area: header;
     background: #2196F3;
     padding: 1rem;
     color: white;
 }
-.nav{
+
+.nav {
     grid-area: nav;
     background: #64B5F6;
     padding: 1rem;
 }
 
-.main{
+.main {
     grid-area: main;
-    background: #bbdefb;
+    background: #BBDEFB;
+    padding: 1rem;
 }
-.sidebar{
+
+.sidebar {
     grid-area: sidebar;
     background: #64B5F6;
     padding: 1rem;
 }
 
-.footer{
+.footer {
     grid-area: footer;
     background: #2196F3;
     padding: 1rem;
     color: white;
 }
-/* สําหรับแท็บเล็ต */
-@media (max-width: 768px){
-    .grid-container{
-    grid-template-areas:
-        "header header"
-        "nav nav"
-        "main sidebar"
-        "footer footer";
+
+/* สํ
+าหรับแท็บเล็ต */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main sidebar"
+            "footer footer";
         grid-template-columns: 1fr 200px;
     }
 }
 
 /* สําหรับมือถือ */
 @media (max-width: 480px) {
-    .grid-container{
-        grid-template-areas: 
+    .grid-container {
+        grid-template-areas:
             "header"
             "nav"
             "main"
@@ -64,60 +69,89 @@
         grid-template-columns: 1fr;
     }
 }
+
 /* Animations */
-@keyframes sideIn{
-    from{
+@keyframes slideIn {
+    from {
         transform: translateX(-100%);
         opacity: 0;
     }
-    to{
+
+    to {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-@keyframes fadeIn{
-    from{ opacity: 0; }
-    to{ opacity: 1; }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-@keyframes bounce{
-    0%, 100%{ transform: translateY(0); }
-    50%{ transform: translateY(-10px); }
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* ใชงาน ้ animations */
-.header{
+.header {
     animation: slideIn 1s ease-out;
 }
 
-.nav ul li{
+.nav ul li {
     opacity: 0;
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-.nav ul li:nth-child(1){ animation-delay: 0.1s;}
-.nav ul li:nth-child(2){ animation-delay: 0.2s;}
-.nav ul li:nth-child(3){ animation-delay: 0.3s;}
-.nav ul li:nth-child(4){ animation-delay: 0.4s;}
-
-.main{
-    animation: fadein 1s ease-out;
+.nav ul li:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-.sidebar{
+.nav ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.nav ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.main {
+    animation: fadeIn 1s ease-out;
+}
+
+.sidebar {
     animation: slideIn 1s ease-out;
 }
+
 /* Hover Effects */
 .nav ul li {
     transition: transform 0.3s ease;
 }
+
 .nav ul li:hover {
     transform: translateX(10px);
 }
+
 .sidebar ul li {
     transition: all 0.3s ease;
 }
+
 .sidebar ul li:hover {
     transform: scale(1.05);
     color: #2196F3;
